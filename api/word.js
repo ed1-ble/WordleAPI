@@ -7,7 +7,7 @@ const cors = require('cors');
 app.use(cors());
 app.use(express.text()) // Middleware, used to PARSE incoming data //
 
-const filePath = path.join(__dirname,'..','5L-words.txt')
+const filePath = path.join(__dirname,'..','public','5L-words.txt')
 
 const fs = require('fs');
 const wordList = fs.readFileSync(filePath,'utf8').split('\n');

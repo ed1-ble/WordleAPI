@@ -4,3 +4,9 @@ A Custom Wordle API that refreshes a word every 6 hours, deployed on Vercel's fr
 
 
 Uses Express.js. Daily words are stored in a text file.  
+
+
+call this API using: https://wordle-api-azure.vercel.app/api/word
+
+
+Made for Numdle.

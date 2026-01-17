@@ -10,17 +10,16 @@ app.use(express.text()) // Middleware, used to PARSE incoming data //
 const filePath = path.join(__dirname,'..','5L-words.txt')
 
 const fs = require('fs');
+const wordList = fs.readFileSync(filePath,'utf8').split('\n');
 
 let getWord=()=>{
-    let wordList = fs.readFileSync(filePath,'utf8').split('\n');
-
     const today = new Date();
     const quadDayIndex = Math.floor(today.getTime() / (1000 * 60 * 60 * 6)); // Rotates word every 6 hours //
     const word = wordList[quadDayIndex % wordList.length];
     return word;
 }
 
-setTimeout(()=>{console.log(getWord())},1000) //
+// setTimeout(()=>{console.log(getWord())},1000) //
 
 app.get('/api/word',(req,res)=>{ // word is an API endpoint, not a url path to any file in the repo! //
     const currWord = getWord();

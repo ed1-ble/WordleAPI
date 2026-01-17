@@ -9,7 +9,7 @@ app.use(express.text()) // Middleware, used to PARSE incoming data //
 let wordList =[];
 
 const fs = require('fs');
-fs.readFile('/5L-words.txt','utf8',(err,data)=>{
+fs.readFile(__dirname + '/5L-words.txt','utf8',(err,data)=>{
     if (err) {
         console.error(err);
         return;

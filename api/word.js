@@ -2,13 +2,14 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-
+const cors = require('cors');
+app.use(cors());
 app.use(express.text()) // Middleware, used to PARSE incoming data //
 
 let wordList =[];
 
 const fs = require('fs');
-fs.readFile('/5L-words.txt','utf8',(err,data)=>{
+fs.readFile('5L-words.txt','utf8',(err,data)=>{
     if (err) {
         console.error(err);
         return;

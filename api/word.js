@@ -5,12 +5,10 @@ const port = 3000;
 
 app.use(express.text()) // Middleware, used to PARSE incoming data //
 
-const fileName = 'common-5L-words.txt';
-const filePath = `../public/${fileName}`;
 let wordList =[];
 
 const fs = require('fs');
-fs.readFile(filePath,'utf8',(err,data)=>{
+fs.readFile('/5L-words.txt','utf8',(err,data)=>{
     if (err) {
         console.error(err);
         return;
